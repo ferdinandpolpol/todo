@@ -1,0 +1,31 @@
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+Todo List:<br>
+<table>
+    <thead>
+        <td>User</td>
+        <td>To-do:</td>
+        <td>Completed</td>
+    </thead>
+    <tbody>
+        {% for todo in todos %}
+        <tr>
+            <td>{{ todo.author.username }}</td>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.completed }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<style>
+    table td {
+        border: 1px black solid;
+        padding: 2px 5px;
+        text-align: left;
+    }
+</style>

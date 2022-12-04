@@ -1,0 +1,16 @@
+{
+    "name": "Todo",
+    "version": "1.0",
+    "description": "",
+    "permissions": [
+        "storage",
+        "*://*/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    }
+}
